@@ -1,51 +1,29 @@
+import Header from "./header.js"
+import TaskInput from "./taskInput.js";
+import Task from "./task.js"
+import Footer from "./footer.js";
+
 export default function Home() {
+  const task = [
+    {id:1,task:"Read a book",isDone:true},
+    {id:2,task:"Take a shower",isDone:false},
+    {id:3,task:"Sleep",isDone:false},
+  ];
   return (
-    // Main container
     <div className="container mx-auto">
-      {/* header section */}
-      <div>
-        <h4 className="display-4 fst-italic text-center">Todo List Mock Up</h4>
-        <p className="text-secondary text-center">
-          This lab teach you how to split react component(s)
-        </p>
-      </div>
-
-      {/* tasks container */}
+        <Header></Header>
       <div style={{ maxWidth: "400px" }} className="mx-auto">
-        {/* task input */}
-        <div className="d-flex gap-1">
-          <input
-            className="form-control"
-            placeholder="Insert a task here.."
-          ></input>
-          <button className="btn btn-primary">Add</button>
-        </div>
-        {/* task */}
-        <div className="d-flex p-3 gap-2 align-items-center border-bottom">
-          <span>Read a book</span>
-          <button className="btn btn-success">Done</button>
-          <button className="btn btn-danger">Delete</button>
-        </div>
-        {/* task */}
-        <div className="d-flex p-3 gap-2 align-items-center border-bottom">
-          <span>Take a shower</span>
-          <button className="btn btn-success">Done</button>
-          <button className="btn btn-danger">Delete</button>
-        </div>
-        {/* task */}
-        <div className="d-flex p-3 gap-2 align-items-center border-bottom">
-          <span>Sleep</span>
-          <button className="btn btn-success">Done</button>
-          <button className="btn btn-danger">Delete</button>
-        </div>
-      </div>
+        <TaskInput></TaskInput>
 
-      {/* //footer section */}
-      <div className="mt-3">
-        <p className="text-secondary text-center">
-          copyright © 2023 Chayanin Suatap 12345678
-        </p>
+        <Task {...task[0]} />
+        <Task {...task[1]} />
+        <Task {...task[2]} />
+
+
       </div>
+    <Footer year = "2024" name = "Panisa Pathapee" studentID = "660610773">
+    </Footer>
+
     </div>
   );
 }
